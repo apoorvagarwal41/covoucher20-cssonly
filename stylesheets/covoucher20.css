@@ -1,0 +1,979 @@
+/**
+ * CoVoucher20 CSS stylesheet
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+  color: #aab7c5;
+}
+:-moz-placeholder {
+  color: #aab7c5;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: #aab7c5;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #aab7c5;
+}
+
+/* mobile first design */
+body {
+  font-family: Raleway, Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+  color: #292c3d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+nav#main-menu a,
+#content a.primary,
+#content a.secondary,
+.signup input.primary,
+form input.primary {
+  font-family: Varela Round, Arial, sans-serif;
+  color: #4f5260;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1em;
+}
+
+nav#main-menu a {
+  font-size: 0.6rem;
+}
+
+#content a.primary,
+#content a.secondary,
+.signup input.primary,
+form input.primary {
+  font-size: 0.67rem;
+}
+
+#content .primary,
+#content .secondary {
+  min-width: 210px;
+}
+
+nav#main-menu a {
+  display: block;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Button styling */
+.menu-toggle {
+  display: inline-block;
+  padding: 0.75em 15px;
+  line-height: 1em;
+  font-size: 1em;
+  color: #4f5260;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: teal;
+}
+
+.container {
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 3px solid #008080;
+  background: #fff;
+}
+
+.nav-container {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  min-height: 80px;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.nav-container .nav-logo {
+  margin: 0 auto;
+}
+
+.nav-container .nav-logo img {
+  display: block;
+}
+
+nav#main-menu a.primary,
+.signup input.primary,
+form input.primary,
+#content a.primary {
+  background-color: teal;
+  color: white;
+}
+
+.signup input.primary,
+form input.primary {
+  display: block;
+  margin: 0 auto;
+}
+
+.main-menu ul {
+  list-style: none;
+}
+
+section.odd,
+section.even {
+  min-height: calc(40vh);
+  padding: 15px;
+}
+
+section.odd,
+section.shaded {
+  background-color: #fffbfa;
+}
+
+section.even,
+section.blank {
+  background-color: white;
+}
+
+.section-container {
+  max-width: 1300px;
+  margin: 15px auto 15px;
+}
+
+.image-container {
+  display: block;
+  margin: 30px auto 30px;
+  max-width: 750px;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-container.economics img {
+  max-width: 523px;
+}
+
+.primary {
+  border-radius: 500px;
+  overflow: visible;
+  vertical-align: middle;
+  padding: 15px 30px;
+}
+
+.secondary {
+  background-color: #fff;
+  box-shadow: 1px 2px 5px -1px rgba(50, 50, 93, 1),
+    0 1px 3px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 500px;
+  text-decoration: none;
+  min-width: 300px;
+  padding: 10px 30px;
+}
+
+a.centered {
+  display: block;
+  margin: 15px auto 15px;
+  max-width: 300px;
+  text-align: center;
+}
+
+h1 {
+  margin: 1em;
+  text-align: center;
+}
+
+h2 {
+  margin: 0.7em 0;
+}
+
+p {
+  margin: 0.5em;
+}
+
+footer {
+  width: 80%;
+}
+
+footer p.copyright {
+  text-align: center;
+  font-family: PT Serif;
+  font-style: italic;
+  margin: 0;
+  color: #90929d;
+  letter-spacing: 0;
+}
+
+/*
+ *
+ *
+ * Homepage carousel
+ *
+ *
+ */
+
+.carousel-wrapper {
+  height: 450px;
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  max-width: 100%;
+}
+
+.carousel-image .text-container {
+  top: 330px;
+  position: relative;
+  transform: translate(0%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-image .text-container h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.arrow {
+  border: solid #4f5260;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+
+.arrow-prev {
+  left: -30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.arrow-next {
+  right: -30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Hide every image */
+[id^='image'] {
+  display: none;
+}
+
+.image-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url('/images/Outdoor activities.jpg') center center no-repeat;
+  background-color: rgba(255, 251, 250, 0.4);
+  background-blend-mode: lighten;
+}
+
+.image-2 {
+  background: url('/images/Local hotels.jpg') center center no-repeat;
+  background-color: rgba(255, 251, 250, 0.4);
+  background-blend-mode: lighten;
+}
+
+.image-3 {
+  background: url('/images/Spas.jpg') center center no-repeat;
+  background-color: rgba(255, 251, 250, 0.4);
+  background-blend-mode: lighten;
+}
+
+.image-4 {
+  background: url('/images/and many more.jpg') center center no-repeat;
+  background-color: rgba(255, 251, 250, 0.4);
+  background-blend-mode: lighten;
+}
+
+.image-5 {
+  background: url('/images/Restaurants.jpg') center center no-repeat;
+  background-color: rgba(255, 251, 250, 0.4);
+  background-blend-mode: lighten;
+}
+
+.image-6 {
+  background: url('/images/Bars.jpg') center center no-repeat;
+  background-color: rgba(255, 251, 250, 0.4);
+  background-blend-mode: lighten;
+}
+
+.image-7 {
+  background: url('/images/Music lessons.jpg') center center no-repeat;
+  background-color: rgba(255, 251, 250, 0.4);
+  background-blend-mode: lighten;
+}
+
+.image-8 {
+  background: url('/images/Hairdressers.jpg') center center no-repeat;
+  background-color: rgba(255, 251, 250, 0.4);
+  background-blend-mode: lighten;
+}
+
+*:target ~ .image-1 {
+  opacity: 0;
+}
+
+#image-1:target ~ .image-1 {
+  opacity: 1;
+}
+
+#image-2:target ~ .image-2,
+#image-3:target ~ .image-3,
+#image-4:target ~ .image-4,
+#image-5:target ~ .image-5,
+#image-6:target ~ .image-6,
+#image-7:target ~ .image-7,
+#image-8:target ~ .image-8 {
+  z-index: 3;
+  opacity: 1;
+}
+
+/*
+ *
+ *
+ * Rest of public pages
+ *
+ *
+ */
+
+.section-container ul {
+  margin: 0 1em;
+}
+
+.picture-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.picture-container .heading-container {
+  margin: 15px;
+  flex-direction: column;
+}
+
+.heading-container h1 {
+  margin-left: 0;
+}
+
+.heading-container p {
+  margin: 0;
+}
+
+.picture-container img.founder {
+  width: 50 px;
+}
+
+ol {
+  list-style: none;
+}
+
+ol.steps {
+  margin-bottom: 2em;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.steps p {
+  margin: 0.5em;
+}
+
+ol.steps li img {
+  max-width: 30px;
+  width: 10%;
+}
+
+/*
+ *
+ *
+ * Accordion in the FAQ
+ *
+ *
+ */
+
+.accordion input[name='panel'] {
+  display: none;
+}
+
+.accordion label {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1em;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.accordion label:before {
+  content: '+ ';
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}
+
+.accordion label:hover {
+  color: teal;
+}
+
+input.panel:checked + label {
+  color: teal;
+}
+
+input[name='panel']:checked + label:before {
+  content: '- ';
+  /* adjust line-height to vertically center icon */
+  line-height: 0.8em;
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0em;
+  padding: 0 1.5em;
+  transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+
+input[name='panel']:checked ~ .accordion-content {
+  /* Get this as close to what height you expect */
+  max-height: 100em;
+}
+
+#content ul li {
+  margin: 0.5em;
+  margin-left: 1em;
+}
+
+/* Illustration */
+.illustration,
+.illustration .organization {
+  width: 170px;
+  height: 170px;
+}
+
+.illustration {
+  background-color: #fff;
+  border-radius: 85px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.illustration {
+  background: url(/images/covoucher20-illustration.svg) center center no-repeat;
+  background-size: 120px 120px;
+}
+
+.illustration.not-found {
+  margin: 50px auto;
+}
+
+.illustration.not-found {
+  transform: rotate(90deg);
+}
+
+/*
+ * 
+ * 
+ * member pages
+ * 
+ *
+ */
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup h2 {
+  text-align: center;
+}
+
+form {
+  width: 60%;
+  margin: 20px auto;
+}
+
+form fieldset {
+  margin-bottom: 2em;
+  border-style: none;
+  background-color: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+fieldset .row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.8em 1.2em;
+}
+
+fieldset .row label {
+  width: 6em;
+  text-align: right;
+}
+
+fieldset .row input {
+  border-style: none;
+  outline: none;
+  margin: 10px;
+  width: 100%;
+}
+
+fieldset .row::before {
+  content: attr(label);
+  padding-right: 20px;
+  color: black;
+  font-weight: 500;
+  text-align: right;
+}
+
+form.extraLong fieldset .row::before {
+  width: 20em;
+}
+
+form.long fieldset .row::before {
+  width: 10em;
+}
+
+form.short fieldset .row::before {
+  width: 2em;
+}
+
+/* Country selection for users is wide because some countries are really long */
+fieldset .row select,
+fieldset .row input {
+  flex: 1;
+  font-size: 1em;
+}
+
+fieldset .row select {
+  padding-right: 25px;
+  border-style: none;
+  outline: none;
+  -webkit-appearance: none;
+  color: #313b3f;
+  cursor: pointer;
+  background: transparent;
+}
+
+fieldset .row.select::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  right: 20px;
+  top: 50%;
+  background-image: url(/images/dropdown.svg);
+  pointer-events: none;
+}
+
+/* removed due to create Account page */
+/*
+form input.primary {
+  width: 100%;
+}
+*/
+
+form {
+  max-width: 600px;
+}
+
+form aside {
+  margin: -1.5em auto 0;
+  text-align: right;
+}
+
+p.error {
+  color: red;
+}
+
+.profile-options {
+  margin: 0 0 35px;
+}
+
+form label {
+  display: block;
+}
+
+form label.profile-option {
+  width: auto;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  margin: 17px 0;
+}
+
+form label span.radio {
+  margin-left: 10px;
+}
+
+form input.primary {
+  margin-top: 2em;
+}
+
+#content.dashboard {
+  margin-bottom: 250px;
+}
+
+.message-container {
+  background-color: #ff8c00;
+}
+
+.message {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*
+ * 
+ * 
+ * public pages of organizations and covouchers
+ * 
+ *
+ */
+.organization .owner img,
+.organization .picture img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.organization h1 {
+  padding: 1em;
+}
+
+.organization .owner img {
+  float: left;
+}
+
+.organization .picture img {
+  float: right;
+}
+
+.organization .clear {
+  clear: both;
+}
+
+blockquote {
+  padding: 2em;
+  font-style: italic;
+}
+
+.voucher-details {
+  background-color: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.voucher-details .list .row {
+  display: block;
+}
+
+.voucher-details .row .field {
+  width: 6em;
+  text-align: right;
+}
+
+.voucher-details .row .value {
+  width: 4em;
+  text-align: left;
+  padding-left: 1em;
+}
+
+.voucher-details .row::before {
+  content: attr(label);
+  color: black;
+  font-weight: 500;
+  text-align: right;
+}
+
+.voucher-details .row span.value {
+  display: block;
+  margin-left: 100px;
+  width: 100%;
+}
+
+.list.vouchers {
+  display: flex;
+  flex-direction: row;
+}
+
+.list.vouchers .row {
+  width: 100%;
+  flex-direction: column;
+  flex: 0.2;
+}
+
+/*
+ * 
+ * 
+ * mobile only media query
+ * 
+ *
+ */
+@media screen and (max-width: 900px) {
+  /*
+   *
+   * Pure CSS menu for mobile
+   *
+   *
+   */
+
+  nav#main-menu a {
+    padding: 0.75em 15px;
+  }
+
+  /* Offscreen menu style */
+  .main-menu {
+    position: absolute;
+    display: none;
+    left: -200px;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    transition: left 0.3s ease, box-shadow 0.3s ease;
+    z-index: 999;
+  }
+
+  .main-menu ul {
+    margin: 0;
+    padding: 2.5em 0 0;
+    /* Hide shadow w/ -8px while 'closed' */
+    -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+    box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+    min-height: 100%;
+    width: 200px;
+    background: #fffbfa;
+  }
+
+  .main-menu a:hover,
+  .main-menu a:focus {
+    background: #fed1bc;
+  }
+
+  .main-menu .menu-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .main-menu:target,
+  .main-menu[aria-expanded='true'] {
+    display: block;
+    left: 0;
+    outline: none;
+    -moz-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+    box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .main-menu:target .menu-close,
+  .main-menu[aria-expanded='true'] .menu-close {
+    z-index: 1001;
+  }
+
+  .main-menu:target ul,
+  .main-menu[aria-expanded='true'] ul {
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* 
+     We could us `.main-menu:target:after`, but
+     it wouldn't be clickable.
+ */
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded='true'] + .backdrop {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background: #000;
+    background: rgba(255, 251, 250, 0.75);
+    cursor: default;
+  }
+
+  .main-menu .primary {
+    border-radius: 0px;
+  }
+
+  @supports (position: fixed) {
+    .main-menu,
+    .main-menu:target + .backdrop,
+    .main-menu[aria-expanded='true'] + .backdrop {
+      position: fixed;
+    }
+  }
+  @import url('//use.fontawesome.com/releases/v4.7.0/css/font-awesome-css.min.css');
+  /* FONT PATH
+   * -------------------------- */
+  @font-face {
+    font-family: 'FontAwesome';
+    src: url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot');
+    src: url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot?#iefix')
+        format('embedded-opentype'),
+      url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2')
+        format('woff2'),
+      url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff')
+        format('woff'),
+      url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.ttf')
+        format('truetype'),
+      url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.svg#fontawesomeregular')
+        format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .fa-bars:before {
+    content: '\f0c9';
+  }
+
+  .fa-close:before,
+  .fa-times:before {
+    content: '\f00d';
+  }
+
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/*
+ * 
+ * 
+ * desktop only media query
+ * 
+ *
+ */
+@media screen and (min-width: 900px) {
+  body {
+    font-size: 16px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: 200;
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0.5em;
+  }
+
+  .container {
+    padding: 0px 20px;
+  }
+
+  .main-menu ul {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    left: 0px;
+  }
+
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  .nav-container .nav-logo {
+    margin: 0;
+  }
+
+  nav#main-menu a {
+    padding: 0 10px;
+  }
+
+  nav#main-menu .primary {
+    display: inline-block;
+  }
+
+  nav#main-menu a.primary {
+    /* repeated because the padding of the navigation links is more specific than the general primary button */
+    color: white;
+    padding: 15px 20px;
+  }
+
+  /* change to teal on hover */
+  nav#main-menu a:hover,
+  nav#main-menu a:focus {
+    color: teal;
+  }
+
+  /* and keep the main button, for signing up, in white */
+  nav#main-menu a.primary:hover,
+  nav#main-menu a.primary:focus {
+    color: white;
+  }
+
+  .signup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .patron,
+  .owner {
+    width: 50%;
+  }
+}
