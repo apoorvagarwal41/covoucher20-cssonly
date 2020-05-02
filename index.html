@@ -24,6 +24,7 @@
       type="text/css"
       href="/stylesheets/covoucher20.css"
     />
+    <link rel="stylesheet" href="/stylesheets/utility.css " />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Varela+Round&amp;display=swap"
@@ -40,8 +41,8 @@
     />
   </head>
   <body>
-    <header class="container">
-      <div class="nav-container">
+    <header class="nav-container">
+      <div class="nav-content">
         <a
           class="menu-toggle"
           id="main-menu-toggle"
@@ -94,8 +95,8 @@
               alt="CoVoucher20: the pandemic is temporary; travel is forever"
             />
           </div>
-          <h1>We help local hotels through the pandemic</h1>
-          <p>
+          <h1 class="ta-center">We help local hotels through the pandemic</h1>
+          <p class="ta-center mt--1">
             CoVoucher20 is a platform for consumers to plan holidays and help
             local hotels through the pandemic. Anyone can start planning their
             holidays now to escape the confinement, and we mutualize the
@@ -208,8 +209,10 @@
       </section>
       <section class="odd">
         <div class="section-container">
-          <h1>How it works</h1>
-          <ol class="steps">
+          <h1 class="ta-center pb--1" style="border-bottom: 1px solid #aaa;">
+            How it works
+          </h1>
+          <ol class="steps mt--2">
             <li>
               <img src="/images/pictograms_1.png" alt="step 1" />
               <p>
@@ -239,31 +242,37 @@
               </p>
             </li>
           </ol>
-          <h2>Can CoVoucher20 really save a local hotel?</h2>
-          <p>
+          <h2 class="mt--3">Can CoVoucher20 really save a local hotel?</h2>
+          <p class="mt--1">
             This is our most frequent question, so we dedicated a large part of
-            our <a href="/faq#save">Frequently Asked Questions</a> to an example
-            with numbers and the economics of CoVoucher20.
+            our
+            <a href="/faq#save" class="link">Frequently Asked Questions</a> to
+            an example with numbers and the economics of CoVoucher20.
           </p>
-          <h2>Like what you see?</h2>
-          <p>
+          <h2 class="mt--1">Like what you see?</h2>
+          <p class="mt--1">
             CoVoucher20 works for businesses in over 30 countries, and for
             consumers all over the world.
           </p>
-          <a class="primary centered" href="/users/signup">Create account</a>
+          <a class="primary centered mt--2" href="/users/signup"
+            >Create account</a
+          >
         </div>
       </section>
     </div>
-    <footer class="section-container">
-      <p class="copyright">
-        © 2020 The CoVoucher Authors, all rights reserved.
-      </p>
-      <p class="copyright">
-        CoVoucher, CoVoucher20, and CoVoucher-20 are trademarks of Covoucher
-        Ltd, a company limited by shares and registered in England and Wales
-        (12526044), and of Genuine Happiness, Serviços Digitais Unipessoal Lda,
-        a company limited by shares and registered in Portugal (515934151).
-      </p>
+    <footer>
+      <div class="footer-content">
+        <p class="copyright ta-center">
+          © 2020 The CoVoucher Authors, all rights reserved.
+        </p>
+        <p class="copyright ta-center mt--1">
+          CoVoucher, CoVoucher20, and CoVoucher-20 are trademarks of Covoucher
+          Ltd, a company limited by shares and registered in England and Wales
+          (12526044), and of Genuine Happiness, Serviços Digitais Unipessoal
+          Lda, a company limited by shares and registered in Portugal
+          (515934151).
+        </p>
+      </div>
     </footer>
     <!-- <script src="/javascripts/covoucher20.js"></script> -->
     <script src="https://js.stripe.com/v3/"></script>

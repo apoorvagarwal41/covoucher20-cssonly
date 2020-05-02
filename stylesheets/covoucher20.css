@@ -29,7 +29,7 @@
 /* mobile first design */
 body {
   font-family: Raleway, Arial, sans-serif;
-  font-size: 1.3rem;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.7;
   -webkit-text-size-adjust: 100%;
@@ -38,6 +38,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* To account for the height of the fixed navigation bar */
+  padding-top: 4em;
+}
+/* Custom Styles for the Scrollbar*/
+::-webkit-scrollbar-track {
+  background-color: #f5f5f500;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(245, 245, 245, 0.048);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.336);
+  border-radius: 10px;
 }
 
 nav#main-menu a,
@@ -57,13 +73,6 @@ form input.primary {
 
 nav#main-menu a {
   font-size: 0.6rem;
-}
-
-#content a.primary,
-#content a.secondary,
-.signup input.primary,
-form input.primary {
-  font-size: 0.67rem;
 }
 
 #content .primary,
@@ -90,9 +99,7 @@ nav#main-menu a {
 /* Button styling */
 .menu-toggle {
   display: inline-block;
-  padding: 0.75em 15px;
-  line-height: 1em;
-  font-size: 1em;
+  font-size: 1.5em;
   color: #4f5260;
 }
 
@@ -101,32 +108,34 @@ nav#main-menu a {
   color: teal;
 }
 
-.container {
+.nav-container {
   position: fixed;
   z-index: 100000;
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 3px solid #008080;
   background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.nav-container {
+.nav-content {
   display: flex;
   display: -ms-flexbox;
   display: -webkit-flex;
-  min-height: 80px;
+  padding: 1.5em 1em;
+  max-width: 1300px;
+  margin: 0 auto;
   -ms-flex-align: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   align-items: center;
 }
 
-.nav-container .nav-logo {
+.nav-content .nav-logo {
   margin: 0 auto;
 }
 
-.nav-container .nav-logo img {
+.nav-content .nav-logo img {
   display: block;
 }
 
@@ -150,13 +159,13 @@ form input.primary {
 
 section.odd,
 section.even {
-  min-height: calc(40vh);
-  padding: 15px;
+  min-height: 40vh;
 }
 
 section.odd,
 section.shaded {
   background-color: #fffbfa;
+  border: 1px solid #0000001a;
 }
 
 section.even,
@@ -166,19 +175,19 @@ section.blank {
 
 .section-container {
   max-width: 1300px;
-  margin: 15px auto 15px;
+  margin: 0 auto;
+  padding: 3em 2.5em;
 }
 
 .image-container {
   display: block;
-  margin: 30px auto 30px;
-  max-width: 750px;
+  margin: 30px auto;
+  max-width: 300px;
 }
 
 .image-container img {
   display: block;
   width: 100%;
-  margin: 0 auto;
 }
 
 .image-container.economics img {
@@ -190,6 +199,14 @@ section.blank {
   overflow: visible;
   vertical-align: middle;
   padding: 15px 30px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.primary:hover {
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.336);
+}
+
+.primary:active {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.336);
 }
 
 .secondary {
@@ -204,33 +221,25 @@ section.blank {
 
 a.centered {
   display: block;
-  margin: 15px auto 15px;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 300px;
   text-align: center;
 }
 
-h1 {
-  margin: 1em;
-  text-align: center;
-}
-
-h2 {
-  margin: 0.7em 0;
-}
-
-p {
-  margin: 0.5em;
-}
-
 footer {
-  width: 80%;
+  border-top: 2px solid #008080;
+}
+
+footer .footer-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.3em 0;
 }
 
 footer p.copyright {
-  text-align: center;
   font-family: PT Serif;
   font-style: italic;
-  margin: 0;
   color: #90929d;
   letter-spacing: 0;
 }
@@ -244,7 +253,7 @@ footer p.copyright {
  */
 
 .carousel-wrapper {
-  height: 450px;
+  height: 25em;
   position: relative;
   width: 700px;
   margin: 0 auto;
@@ -257,14 +266,14 @@ footer p.copyright {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 25px 50px;
+  margin: 2em 4em;
   opacity: 0;
   transition: all 0.5s ease-in-out;
   max-width: 100%;
 }
 
 .carousel-image .text-container {
-  top: 330px;
+  top: 85%;
   position: relative;
   transform: translate(0%, -50%);
   background-color: rgba(255, 255, 255, 0.8);
@@ -280,7 +289,7 @@ footer p.copyright {
   border: solid #4f5260;
   border-width: 0 3px 3px 0;
   display: inline-block;
-  padding: 12px;
+  padding: 0.6em;
 }
 
 .arrow-prev {
@@ -387,45 +396,39 @@ footer p.copyright {
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 2em;
+  padding: 1em 1em;
+  border-radius: 6em;
+  background: linear-gradient(to right, #cac9c662, transparent 80%);
 }
 
 .picture-container .heading-container {
-  margin: 15px;
-  flex-direction: column;
-}
-
-.heading-container h1 {
-  margin-left: 0;
-}
-
-.heading-container p {
-  margin: 0;
+  margin-left: 1em;
 }
 
 .picture-container img.founder {
-  width: 50 px;
+  max-width: 8em;
 }
 
 ol {
   list-style: none;
 }
 
-ol.steps {
-  margin-bottom: 2em;
-}
-
 .steps li {
   display: flex;
   align-items: center;
-  flex-direction: row;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0px 0px 14px inset #d9d5d5;
 }
 
 .steps p {
-  margin: 0.5em;
+  margin-left: 1em;
 }
 
 ol.steps li img {
-  max-width: 30px;
+  max-width: 2em;
   width: 10%;
 }
 
@@ -751,6 +754,27 @@ blockquote {
   flex: 0.2;
 }
 
+.link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  font-weight: bold;
+}
+
+.link:after {
+  position: absolute;
+  content: '';
+  bottom: 0.2em;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 2px;
+  background: #00808069;
+  transition: height 0.3s ease, bottom 0.3s ease;
+}
+
 /*
  * 
  * 
@@ -759,6 +783,10 @@ blockquote {
  *
  */
 @media screen and (max-width: 900px) {
+  body {
+    font-size: 12px;
+  }
+
   /*
    *
    * Pure CSS menu for mobile
@@ -767,18 +795,23 @@ blockquote {
    */
 
   nav#main-menu a {
-    padding: 0.75em 15px;
+    padding: 1.5em 0;
+    text-align: center;
+  }
+
+  nav#main-menu a.menu-close {
+    padding: 1.5em;
   }
 
   /* Offscreen menu style */
   .main-menu {
     position: absolute;
-    display: none;
-    left: -200px;
+    left: 0;
     top: 0;
     height: 100%;
     overflow-y: auto;
-    transition: left 0.3s ease, box-shadow 0.3s ease;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 999;
   }
 
@@ -790,7 +823,7 @@ blockquote {
     -moz-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
     box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
     min-height: 100%;
-    width: 200px;
+    width: 250px;
     background: #fffbfa;
   }
 
@@ -808,7 +841,7 @@ blockquote {
   .main-menu:target,
   .main-menu[aria-expanded='true'] {
     display: block;
-    left: 0;
+    transform: translateX(0%);
     outline: none;
     -moz-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
@@ -894,6 +927,21 @@ blockquote {
   }
 }
 
+/* Better sizing and spacing for smaller devices (For Eg. Iphone SE)*/
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .nav-content {
+    padding: 1em;
+  }
+  .section-container {
+    padding: 3em 2em;
+  }
+}
+
 /*
  * 
  * 
@@ -916,27 +964,20 @@ blockquote {
     line-height: 1.2;
   }
 
-  p {
-    margin: 0.5em;
-  }
-
-  .container {
-    padding: 0px 20px;
+  .section-container {
+    padding: 3em 1em;
   }
 
   .main-menu ul {
-    font-size: 11px;
     display: flex;
     align-items: center;
-    margin-left: auto;
-    left: 0px;
   }
 
-  .nav-container {
+  .nav-content {
     justify-content: space-between;
   }
 
-  .nav-container .nav-logo {
+  .nav-content .nav-logo {
     margin: 0;
   }
 
@@ -954,16 +995,10 @@ blockquote {
     padding: 15px 20px;
   }
 
-  /* change to teal on hover */
-  nav#main-menu a:hover,
-  nav#main-menu a:focus {
+  /* change to teal on hover and keep the main button, for signing up, in white*/
+  nav#main-menu a:hover:not(.primary),
+  nav#main-menu a:focus:not(.primary) {
     color: teal;
-  }
-
-  /* and keep the main button, for signing up, in white */
-  nav#main-menu a.primary:hover,
-  nav#main-menu a.primary:focus {
-    color: white;
   }
 
   .signup {
@@ -975,5 +1010,21 @@ blockquote {
   .patron,
   .owner {
     width: 50%;
+  }
+  .image-container {
+    max-width: 650px;
+  }
+
+  .picture-container img.founder {
+    max-width: 150px;
+  }
+
+  .link:hover:after {
+    height: 100%;
+    bottom: 0;
+  }
+
+  footer .footer-content {
+    max-width: 80%;
   }
 }
