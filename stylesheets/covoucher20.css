@@ -237,6 +237,37 @@ footer .footer-content {
   padding: 1.3em 0;
 }
 
+footer .footer-content .social {
+  display: flex;
+  justify-content: center;
+}
+footer .footer-content .social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 4px 4px 8px #d9d9d9, -4px -4px 8px #ffffff;
+}
+
+footer .footer-content .social a:not(:first-child) {
+  margin-left: 0.8rem;
+}
+
+/* Neuromorphic Effect 
+  (Essentialy to make the buttons feel like real popout/popin buttons) */
+footer .footer-content .social a:hover {
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 4px 4px 8px #d9d9d9, -4px -4px 8px #ffffff;
+}
+footer .footer-content .social a:active {
+  background: #ffffff;
+  box-shadow: inset 4px 4px 8px #d9d9d9, inset -4px -4px 8px #ffffff;
+}
+
 footer p.copyright {
   font-family: PT Serif;
   font-style: italic;
